@@ -6,8 +6,49 @@
     <title>Document</title>
 </head>
 <body>
-    
+<form>
+<h1>Numbers Inputs and Buttons</h1>
+<label for="num_1">Number 1: </label><br>
+<input type="number" id="num_1"><br><br>
+<button type="button" onclick="par_impar()" id="p_i_b">par/impar</button>
+<button type="button" onclick="es_primo()" id="prime_b">Es primo</button>
+<button type="button" onclick="tiene_raiz()" id="r_b">Tiene raiz</button>
+</form>
 </body>
-<input type="number" id="num_1">
-<input type="number" id="num_2">
+
+<script>
+function par_impar(){
+    let my_variable = document.getElementById("num_1").value;
+    if (my_variable%2==0){
+        alert("El numero es par");
+    }else{
+        alert("El numero es impar");
+    }
+}
+
+  function es_primo(){
+let my_variable = Number(document.getElementById("num_1").value);
+    let cont = 0;
+    for (let i = 1; i < my_variable+1; i++) {
+        if (my_variable%i==0) {
+            cont++;
+        }
+        if (cont==2 && i<my_variable){
+            alert("El número NO es primo");
+            return;
+        }
+    }
+    if(my_variable>0)
+        alert("El número es primo");
+    else
+        alert("El número NO es primo");
+}
+function tiene_raiz(){let my_variable = document.getElementById("num_1").value;
+if (my_variable**(1/2)%1==0){
+    alert("Tiene raiz cuadrada: " + my_variable**(1/2))
+}else{
+    alert("No tiene raiz cuadrada");
+    }
+}
+</script>
 </html>
